@@ -1,0 +1,52 @@
+{
+    "name": "mechemsi/static-rules",
+    "description": "Static rule package",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mechemsi\\StaticRules\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dominykas",
+            "email": "dominykas.vilipas@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/coding-standard": "^12.0",
+        "dq5studios/psalm-junit": "^3.0",
+        "drenso/phan-extensions": "^3.5",
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "mayflower/mo4-coding-standard": "^10.0",
+        "nunomaduro/phpinsights": "^2.11",
+        "phan/phan": "^5.4",
+        "php-coveralls/php-coveralls": "^2.7",
+        "php-standard-library/psalm-plugin": "^2.3",
+        "phpmd/phpmd": "^2.15",
+        "phpmetrics/phpmetrics": "^2.8",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^1.12",
+        "phpstan/phpstan-deprecation-rules": "^1.2",
+        "phpstan/phpstan-doctrine": "^1.5",
+        "phpstan/phpstan-phpunit": "^1.4",
+        "phpstan/phpstan-strict-rules": "^1.6",
+        "phpstan/phpstan-symfony": "^1.4",
+        "psalm/plugin-phpunit": "^0.19.0",
+        "psalm/plugin-symfony": "^5.2",
+        "rector/rector": "^1.2",
+        "roave/security-advisories": "dev-master",
+        "slevomat/coding-standard": "^8.15",
+        "squizlabs/php_codesniffer": "^3.10",
+        "symplify/easy-coding-standard": "^12.3",
+        "vimeo/psalm": "^5.26",
+        "weirdan/doctrine-psalm-plugin": "^2.9"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
+        }
+    }
+}
