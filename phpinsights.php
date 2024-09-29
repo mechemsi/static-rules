@@ -5,16 +5,14 @@ declare(strict_types=1);
 return [
     'preset' => 'default',
     'exclude' => [
-        'tests/_output',
-        'tests/_data',
-        'tests/_support/_generated',
-        'proto',
-        'vendor',
-        'var',
-        'config',
-        'ecs.php',
-        'phpinsights.php',
-        'public',
+        '../../../tests/_output',
+        '../../../tests/_data',
+        '../../../tests/_support/_generated',
+        '../../../proto',
+        '../../../vendor',
+        '../../../var',
+        '../../../config',
+        '../../../public',
     ],
     'add' => [
         //  ExampleMetric::class => [
