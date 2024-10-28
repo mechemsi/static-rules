@@ -31,8 +31,8 @@ use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->paths([
-        __DIR__ . '/../../../src',
-        __DIR__ . '/../../../tests',
+        __DIR__ . '/../../../../src',
+        __DIR__ . '/../../../../tests',
     ]);
 
     $ecsConfig->sets([SetList::PSR_12, SetList::CLEAN_CODE, SetList::COMMON]);
@@ -109,9 +109,9 @@ return static function (ECSConfig $ecsConfig): void {
     array_map(static fn ($parameters) => $ecsConfig->ruleWithConfiguration(...$parameters), $ruleConfigurations);
 
     $ecsConfig->skip([
-        __DIR__ . '/tests/_output',
-        __DIR__ . '/tests/_data',
-        __DIR__ . '/tests/_support/_generated',
+        __DIR__ . '/../../../../tests/_output',
+        __DIR__ . '/../../../../tests/_data',
+        __DIR__ . '/../../../../tests/_support/_generated',
         NoMultilineWhitespaceAroundDoubleArrowFixer::class => null,
         PhpdocNoPackageFixer::class => null,
         PhpdocSummaryFixer::class => null,

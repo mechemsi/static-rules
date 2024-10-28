@@ -7,18 +7,18 @@
         xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
-        <directory name="../../../src"/>
-        <directory name="../../../tests"/>
+        <directory name="../../../../src"/>
+        <directory name="../../../../tests"/>
         <ignoreFiles>
-            <directory name="../../../vendor"/>
-            <directory name="../../../tests/_output"/>
-            <directory name="../../../tests/_data"/>
-            <directory name="../../../tests/_support/_generated"/>
+            <directory name="../../../../vendor"/>
+            <directory name="../../../../tests/_output"/>
+            <directory name="../../../../tests/_data"/>
+            <directory name="../../../../tests/_support/_generated"/>
 <!--            <file name="../../../tests/_support/AcceptanceTester.php" />-->
 <!--            <file name="../../../tests/_support/ApiTester.php" />-->
 <!--            <file name="../../../tests/_support/UnitTester.php" />-->
 <!--            <file name="../../../tests/ObjectManager.php" />-->
-            <file name="../../../tests/bootstrap.php" />
+            <file name="../../../../tests/bootstrap.php" />
 <!--            <file name="../../../tests/_support/FunctionalTester.php" />-->
 <!--            <file name="../../../tests/_support/FunctionalTester.php" />-->
         </ignoreFiles>
@@ -37,12 +37,12 @@
         <PossiblyInvalidArgument errorLevel="suppress" />
         <UndefinedMagicMethod>
             <errorLevel type="suppress">
-                <directory name="../../../tests" />
+                <directory name="../../../../tests" />
             </errorLevel>
         </UndefinedMagicMethod>
         <PossiblyUndefinedMethod>
             <errorLevel type="suppress">
-                <directory name="../../../tests" />
+                <directory name="../../../../tests" />
             </errorLevel>
         </PossiblyUndefinedMethod>
     </issueHandlers>

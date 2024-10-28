@@ -6,21 +6,21 @@ parameters:
     scanDirectories:
         #- tests/_support/Helper
     excludePaths:
-        - ../../../*.html.php
-        - ../../../*.json.php
-        - ../../../src/Composer/ScriptHandler.php
-        - ../../../proto/*
-        - ../../../tests/_data/*
-        - ../../../tests/_output/*
+        - ../../../../*.html.php
+        - ../../../../*.json.php
+        - ../../../../src/Composer/ScriptHandler.php
+        - ../../../../proto/*
+        - ../../../../tests/_data/*
+        - ../../../../tests/_output/*
         #- tests/_support/*.php
-        - ../../../tests/_support/_generated/*
-        - ../../../tests/bootstrap.php
+        - ../../../../tests/_support/_generated/*
+        - ../../../../tests/bootstrap.php
     doctrine:
-        objectManagerLoader: ../../../tests/ObjectManager.php
+        objectManagerLoader: ../../../../tests/ObjectManager.php
         allowNullablePropertyForRequiredField: true
         allCollectionsSelectable: true
     symfony:
-        container_xml_path: ../../../var/cache/dev/App_KernelDevDebugContainer.xml
+        container_xml_path: ../../../../var/cache/dev/App_KernelDevDebugContainer.xml
     checkExplicitMixed: false
     #includes:
     #    - tools/02_phpstan/vendor/phpstan/phpstan/conf/bleedingEdge.neon
