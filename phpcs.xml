@@ -2,12 +2,6 @@
 <ruleset name="General">
     <description>The general coding standard.</description>
 
-    <rule ref="./vendor/escapestudios/symfony2-coding-standard/Symfony">
-        <exclude name="Symfony.Commenting.ClassComment.Missing"/>
-        <exclude name="Symfony.Functions.Arguments.Invalid"/>
-        <exclude name="Symfony.Commenting.FunctionComment.Missing"/>
-    </rule>
-
     <!--<exclude-pattern>/proto/*</exclude-pattern>-->
 
 
