@@ -2,13 +2,15 @@ includes:
     #- rules.neon
 parameters:
     level: max
-    checkGenericClassInNonGenericObjectType: false
-    scanDirectories:
-        #- tests/_support/Helper
+    paths:
+        - rector.php
+        - phpinsights.php
+        - ecs.php
+        - .php-cs-fixer.dist.php
     excludePaths:
         - ../../../../*.html.php
         - ../../../../*.json.php
-        - ../../../../src/Composer/ScriptHandler.php
+        - ../../../../src/Composer/ScriptHandler.php (?)
         - ../../../../proto/*
         - ../../../../tests/_data/*
         - ../../../../tests/_output/*

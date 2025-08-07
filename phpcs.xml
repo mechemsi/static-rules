@@ -22,10 +22,14 @@
     <rule ref="Generic.Commenting.Fixme"/>
     <rule ref="Generic.Files.ByteOrderMark"/>
     <rule ref="Generic.Files.LineEndings"/>
-    <rule ref="Generic.Files.LineLength"/>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="140"/>
+        </properties>
+    </rule>
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
-    <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
     <rule ref="Generic.Metrics.CyclomaticComplexity"/>
     <rule ref="Generic.Metrics.NestingLevel"/>
     <rule ref="Generic.NamingConventions.ConstructorName"/>
@@ -56,8 +60,6 @@
 
     <!-- Import Zend coding standard (which in turn imports PEAR) -->
     <rule ref="Zend">
-        <!-- do not check line length -->
-        <exclude name="Generic.Files.LineLength"/>
         <exclude name="Zend.NamingConventions.ValidVariableName.ContainsNumbers"/>
     </rule>
 

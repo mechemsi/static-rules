@@ -118,7 +118,7 @@ return static function (ECSConfig $ecsConfig): void {
         PhpdocSeparationFixer::class => null,
         BlankLineAfterOpeningTagFixer::class => null,
         ClassAttributesSeparationFixer::class => null,
-        NoBlankLinesBeforeNamespaceFixer::class => null,
+        // NoBlankLinesBeforeNamespaceFixer::class => null, // deprecated
         NotOperatorWithSuccessorSpaceFixer::class => null,
         SingleLineThrowFixer::class => null,
         PhpdocAlignFixer::class => null,
