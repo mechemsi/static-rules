@@ -132,4 +132,19 @@
     <rule ref="Generic.Files.LineEndings.InvalidEOLChar">
         <exclude-pattern>tests/Core/Tokenizer/StableCommentWhitespaceWinTest\.php</exclude-pattern>
     </rule>
+
+    <!-- 
+    Configure doc comment rules to only require type info for arrays:
+    - Disable mandatory function doc comments 
+    - But PHPStan (level max) will catch missing array type information
+    - This balances not requiring docs everywhere while ensuring array types are specified
+    -->
+    <rule ref="Symfony.Commenting.FunctionComment.Missing">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Disable mandatory doc comments for classes -->
+    <rule ref="Symfony.Commenting.ClassComment.Missing">
+        <severity>0</severity>
+    </rule>
 </ruleset>

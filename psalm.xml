@@ -13,7 +13,7 @@
         <file name=".php-cs-fixer.dist.php"/>
         <ignoreFiles>
             <directory name="vendor"/>
-        </ignoreFiles>
+            <directory name="tools"/>
     </projectFiles>
     <plugins>
         <pluginClass class="Psalm\SymfonyPsalmPlugin\Plugin"/>
