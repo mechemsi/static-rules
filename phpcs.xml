@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <ruleset name="General">
-    <description>The general coding standard.</description>
+    <file>src</file>
+    <file>tests</file>
 
-    <!--<exclude-pattern>/proto/*</exclude-pattern>-->
+    <description>The general coding standard.</description>
 
     <!-- my rules -->
     <rule ref="Generic.Classes.DuplicateClassName"/>
@@ -11,10 +12,6 @@
     <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
     <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
     <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
-    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
-    <rule ref="Generic.Formatting.SpaceAfterCast"/>
-    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
-    <rule ref="Generic.PHP.LowerCaseConstant"/>
     <rule ref="Generic.Commenting.Todo"/>
     <rule ref="Generic.Commenting.Fixme"/>
     <rule ref="Generic.Files.ByteOrderMark"/>
@@ -29,9 +26,6 @@
     <rule ref="Generic.Metrics.CyclomaticComplexity"/>
     <rule ref="Generic.Metrics.NestingLevel"/>
     <rule ref="Generic.NamingConventions.ConstructorName"/>
-
-    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
-    <rule ref="Squiz.ControlStructures.ControlSignature"/>
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
     <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
     <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
@@ -47,15 +41,10 @@
     <rule ref="PSR2">
         <exclude name="PSR2.Methods.MethodDeclaration.Underscore" />
     </rule>
-    <!-- <rule ref="MO4" /> -->
-    <rule ref="Symfony"/>
+     <rule ref="MO4" />
+        <rule ref="Symfony"/>
     <rule ref="Zend.Files.ClosingTag"/>
     <rule ref="Zend.NamingConventions.ValidVariableName"/>
-
-    <!-- Import Zend coding standard (which in turn imports PEAR) -->
-    <rule ref="Zend">
-        <exclude name="Zend.NamingConventions.ValidVariableName.ContainsNumbers"/>
-    </rule>
 
     <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
         <severity>0</severity>
@@ -65,48 +54,12 @@
         <severity>0</severity>
     </rule>
 
-    <rule ref="Squiz.Strings.ConcatenationSpacing">
-        <properties>
-            <property name="spacing" value="1"/>
-            <property name="ignoreNewlines" value="true"/>
-        </properties>
-    </rule>
-
-    <!-- Have 12 chars padding maximum and always show as errors -->
-    <!--<rule ref="Generic.Formatting.MultipleStatementAlignment">
-        <properties>
-            <property name="error" value="false"/>
-            <property name="ignoreMultiLine" value="true"/>
-        </properties>
-    </rule>-->
-
-
     <!-- Ban some functions -->
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
     <rule ref="Generic.PHP.DisallowShortOpenTag"/>
     <rule ref="Generic.PHP.NoSilencedErrors"/>
     <rule ref="Generic.VersionControl.SubversionProperties"/>
     <rule ref="Generic.PHP.ForbiddenFunctions"/>
-    <!--<rule ref="Generic.PHP.ForbiddenFunctions">
-        <properties>
-            <property name="forbiddenFunctions" type="array">
-                <element key="sizeof" value="count"/>
-                <element key="delete" value="unset"/>
-                <element key="print" value="echo"/>
-                <element key="is_null" value="null"/>
-                <element key="create_function" value="null"/>
-            </property>
-        </properties>
-    </rule>-->
-
-    <!-- Private methods MUST not be prefixed with an underscore
-    <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
-        <type>error</type>
-        <exclude-pattern>_before</exclude-pattern>
-    </rule>-->
-    <!--<rule ref="Generic.NamingConventions.CamelCapsFunctionName">
-        <exclude-pattern>_before</exclude-pattern>
-    </rule>-->
 
     <!-- Private properties MUST not be prefixed with an underscore -->
     <rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
@@ -129,103 +82,53 @@
     - But PHPStan (level max) will catch missing array type information
     - This balances not requiring docs everywhere while ensuring array types are specified
     -->
-    <rule ref="Symfony.Commenting.FunctionComment.Missing">
-        <severity>0</severity>
-    </rule>
+        <rule ref="Symfony.Commenting.FunctionComment.Missing">
+            <severity>0</severity>
+        </rule>
 
-    <!-- Disable mandatory doc comments for classes -->
-    <rule ref="Symfony.Commenting.ClassComment.Missing">
-        <severity>0</severity>
-    </rule>
+        <!-- Disable mandatory doc comments for classes -->
+        <rule ref="Symfony.Commenting.ClassComment.Missing">
+            <severity>0</severity>
+        </rule>
 
-    <rule ref="SlevomatCodingStandard.ControlStructures.RequireMultiLineCondition"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowTrailingMultiLineTernaryOperator"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.RequireMultiLineTernaryOperator">
-        <properties>
-            <property name="lineLengthLimit" value="120"/>
-        </properties>
-    </rule>
-    <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment"/>
-    <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
-    <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
-        <properties>
-            <property name="linesCountBeforeFirstContent" value="0"/>
-            <property name="linesCountBetweenDescriptionAndAnnotations" value="1"/>
-            <property name="linesCountBetweenDifferentAnnotationsTypes" value="1"/>
-            <property name="linesCountBetweenAnnotationsGroups" value="0"/>
-            <property name="linesCountAfterLastContent" value="0"/>
-        </properties>
-    </rule>
+        <rule ref="Symfony">
+            <exclude name="Generic.ControlStructures.InlineControlStructure"/>
+            <exclude name="Generic.Files.LineEndings"/>
+            <exclude name="Generic.Formatting.DisallowMultipleStatements"/>
+            <exclude name="Generic.Functions.FunctionCallArgumentSpacing"/>
+            <exclude name="Generic.PHP.LowerCaseConstant"/>
+            <exclude name="Generic.PHP.LowerCaseKeyword"/>
+            <exclude name="Generic.WhiteSpace.ScopeIndent"/>
 
-    <!-- Require trailing commas for arguments and parameters -->
-    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall"/>
-    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse"/>
-    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration"/>
+            <exclude name="Symfony.Commenting.ClassComment.Missing"/>
+            <exclude name="Symfony.Functions.Arguments.Invalid"/>
+            <exclude name="Symfony.Commenting.FunctionComment.Missing"/>
 
-    <!-- Enforce typehints -->
-    <rule ref="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax"/>
-    <!--
-    This sniff can cause an error if you're overriding parent property which does not have typehints.
-    In such cases add @phpcsSuppress SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint
-    annotation to the property to have this sniff skip it.
-    -->
-    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
-    <!--
-    This sniff can cause an error if you're overriding or implementing a parent method which does not have typehints.
-    In such cases add @phpcsSuppress SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint
-    annotation to the method to have this sniff skip it.
-    -->
-    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
+            <exclude name="PEAR.Functions.ValidDefaultValue"/>
 
-    <rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces">
-        <properties>
-            <property name="ignoreSpacesInAnnotation" value="true"/>
-            <property name="ignoreSpacesInComment" value="true"/>
-        </properties>
-    </rule>
+            <exclude name="PSR1"/>
 
+            <exclude name="PSR2.Classes"/>
+            <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
+            <exclude name="PSR2.ControlStructures.SwitchDeclaration"/>
+            <exclude name="PSR2.Files.ClosingTag"/>
+            <exclude name="PSR2.Methods.FunctionCallSignature"/>
+            <exclude name="PSR2.Methods.MethodDeclaration"/>
+            <exclude name="PSR2.Namespaces"/>
 
-    <rule ref="Symfony">
-        <exclude name="Generic.ControlStructures.InlineControlStructure"/>
-        <exclude name="Generic.Files.LineEndings"/>
-        <exclude name="Generic.Formatting.DisallowMultipleStatements"/>
-        <exclude name="Generic.Functions.FunctionCallArgumentSpacing"/>
-        <exclude name="Generic.PHP.LowerCaseConstant"/>
-        <exclude name="Generic.PHP.LowerCaseKeyword"/>
-        <exclude name="Generic.WhiteSpace.ScopeIndent"/>
-
-        <exclude name="Symfony.Commenting.ClassComment.Missing"/>
-        <exclude name="Symfony.Functions.Arguments.Invalid"/>
-        <exclude name="Symfony.Commenting.FunctionComment.Missing"/>
-
-        <exclude name="PEAR.Functions.ValidDefaultValue"/>
-
-        <exclude name="PSR1"/>
-
-        <exclude name="PSR2.Classes"/>
-        <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
-        <exclude name="PSR2.ControlStructures.SwitchDeclaration"/>
-        <exclude name="PSR2.Files.ClosingTag"/>
-        <exclude name="PSR2.Methods.FunctionCallSignature"/>
-        <exclude name="PSR2.Methods.MethodDeclaration"/>
-        <exclude name="PSR2.Namespaces"/>
-
-        <exclude name="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
-        <exclude name="Squiz.Functions.FunctionDeclaration"/>
-        <exclude name="Squiz.Functions.LowercaseFunctionKeywords"/>
-        <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
-        <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterHint"/>
-        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
-        <exclude name="Squiz.Scope.MethodScope"/>
-    </rule>
+            <exclude name="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+            <exclude name="Squiz.Functions.FunctionDeclaration"/>
+            <exclude name="Squiz.Functions.LowercaseFunctionKeywords"/>
+            <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
+            <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterHint"/>
+            <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
+            <exclude name="Squiz.Scope.MethodScope"/>
+        </rule>
 
     <exclude-pattern>^(?!*(src|test))*proto*$</exclude-pattern>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
-<!--    <rule ref="Generic.Functions.CallTimePassByReference"/>-->
+    <!--    <rule ref="Generic.Functions.CallTimePassByReference"/>-->
     <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
     <rule ref="Generic.PHP.LowerCaseConstant"/>
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
@@ -374,14 +277,6 @@
         </properties>
     </rule>
 
-    <!-- Lines should in no case exceed 120 characters -->
-    <rule ref="Generic.Files.LineLength">
-        <properties>
-            <property name="lineLimit" value="120"/>
-            <property name="absoluteLineLimit" value="120"/>
-        </properties>
-    </rule>
-
     <!-- There should be no empty lines after class opening brace and before class closing brace -->
     <rule ref="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces">
         <properties>
@@ -415,9 +310,9 @@
     <rule ref="Generic.CodeAnalysis.AssignmentInCondition"/>
 
     <!-- Function comments -->
-    <rule ref="Symfony.Commenting.FunctionComment">
-        <severity>0</severity>
-    </rule>
+        <rule ref="Symfony.Commenting.FunctionComment">
+            <severity>0</severity>
+        </rule>
     <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment"/>
     <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
     <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
