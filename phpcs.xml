@@ -4,9 +4,9 @@
 
     <!-- Default paths -->
     <file>src</file>
-    <file>tests</file>
 
     <!-- Exclude patterns -->
+    <exclude-pattern>*/Scripts/*</exclude-pattern>
     <exclude-pattern>tests/_output/*</exclude-pattern>
     <exclude-pattern>tests/_support/_generated/*</exclude-pattern>
     <exclude-pattern>tests/_data/*</exclude-pattern>
@@ -27,7 +27,20 @@
     <rule ref="PSR2">
         <exclude name="PSR2.Methods.MethodDeclaration.Underscore"/>
     </rule>
-    <rule ref="MO4"/>
+    <rule ref="MO4">
+        <!-- Exclude FullyQualifiedGlobalFunctions - conflicts with ReferenceUsedNamesOnly which uses 'use function' -->
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions"/>
+        <!-- Override UseSpacing to allow blank lines between use types -->
+        <exclude name="SlevomatCodingStandard.Namespaces.UseSpacing"/>
+    </rule>
+    <!-- Allow 1 blank line between different use statement types (classes, functions, constants) -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
+        <properties>
+            <property name="linesCountBeforeFirstUse" value="1"/>
+            <property name="linesCountBetweenUseTypes" value="1"/>
+            <property name="linesCountAfterLastUse" value="1"/>
+        </properties>
+    </rule>
     <rule ref="Symfony">
         <exclude name="Symfony.Commenting.FunctionComment.Missing"/>
         <exclude name="Symfony.Commenting.ClassComment.Missing"/>
