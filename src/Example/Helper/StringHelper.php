@@ -4,6 +4,15 @@ declare(strict_types=1);
 
 namespace Mechemsi\StaticRules\Example\Helper;
 
+use function lcfirst;
+use function mb_strlen;
+use function mb_strtolower;
+use function mb_substr;
+use function preg_replace;
+use function str_replace;
+use function trim;
+use function ucwords;
+
 /**
  * String manipulation helper.
  *

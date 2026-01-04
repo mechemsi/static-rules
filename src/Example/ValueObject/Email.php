@@ -7,6 +7,14 @@ namespace Mechemsi\StaticRules\Example\ValueObject;
 use InvalidArgumentException;
 use Stringable;
 
+use function explode;
+use function filter_var;
+use function sprintf;
+use function strtolower;
+use function trim;
+
+use const FILTER_VALIDATE_EMAIL;
+
 /**
  * Email value object with strict validation.
  *

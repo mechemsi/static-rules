@@ -7,6 +7,8 @@ namespace Mechemsi\StaticRules\Example\Exception;
 use Mechemsi\StaticRules\Example\ValueObject\UserId;
 use RuntimeException;
 
+use function sprintf;
+
 /**
  * Exception for user not found scenarios.
  *

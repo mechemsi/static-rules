@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Mechemsi\StaticRules\Example\Enum;
 
+use function array_column;
+
 /**
  * User status enumeration.
  *

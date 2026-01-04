@@ -7,6 +7,9 @@ namespace Mechemsi\StaticRules\Example\ValueObject;
 use InvalidArgumentException;
 use Stringable;
 
+use function bin2hex;
+use function random_bytes;
+
 /**
  * Example value object demonstrating PHPStan level max compliance.
  *

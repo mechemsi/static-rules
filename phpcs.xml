@@ -243,9 +243,9 @@
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
+    <rule ref="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat">
         <properties>
-            <property name="shortNullable" value="yes"/>
+            <property name="enable" value="true"/>
         </properties>
     </rule>
 
@@ -326,5 +326,42 @@
         <exclude-pattern>*.html.php</exclude-pattern>
         <exclude-pattern>*.json.php</exclude-pattern>
         <exclude-pattern>*.txt.php</exclude-pattern>
+    </rule>
+
+    <!-- ======================= -->
+    <!-- Example Code Exclusions -->
+    <!-- ======================= -->
+    <!-- These rules conflict with PHP Insights which prefers no suffix -->
+    <rule ref="Symfony.NamingConventions.ValidClassName.InvalidInterfaceName">
+        <exclude-pattern>src/Example/*</exclude-pattern>
+    </rule>
+    <rule ref="Symfony.NamingConventions.ValidClassName.InvalidExceptionName">
+        <exclude-pattern>src/Example/*</exclude-pattern>
+    </rule>
+    <!-- DTOs and readonly classes commonly use public properties -->
+    <rule ref="SlevomatCodingStandard.Classes.ForbiddenPublicProperty">
+        <exclude-pattern>src/Example/Dto/*</exclude-pattern>
+    </rule>
+    <!-- Multi-line constructor arguments are valid PSR-12 -->
+    <rule ref="Symfony.Functions.Arguments.Invalid">
+        <exclude-pattern>src/Example/*</exclude-pattern>
+    </rule>
+    <!-- Allow more flexible array alignment in examples -->
+    <rule ref="MO4.Arrays.ArrayDoubleArrowAlignment">
+        <exclude-pattern>src/Example/*</exclude-pattern>
+    </rule>
+    <rule ref="Generic.Formatting.MultipleStatementAlignment">
+        <exclude-pattern>src/Example/*</exclude-pattern>
+    </rule>
+    <!-- Allow flexible member var spacing in readonly classes -->
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing">
+        <exclude-pattern>src/Example/*</exclude-pattern>
+    </rule>
+    <!-- Docblock comments optional for self-documenting code -->
+    <rule ref="Symfony.Commenting.FunctionComment.MissingParamTag">
+        <exclude-pattern>src/Example/*</exclude-pattern>
+    </rule>
+    <rule ref="Symfony.Commenting.FunctionComment.MissingReturn">
+        <exclude-pattern>src/Example/*</exclude-pattern>
     </rule>
 </ruleset>

@@ -40,7 +40,8 @@
                 DateTime,
                 DateTimeImmutable
             "/>
-            <property name="ignorepattern" value="/^create/i"/>
+            <!-- Allow static factory methods (from*, with*, create*, generate*, of*) -->
+            <property name="ignorepattern" value="/^(create|from|with|generate|of)/i"/>
         </properties>
     </rule>
 

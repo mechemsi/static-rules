@@ -9,6 +9,11 @@ use Mechemsi\StaticRules\Example\Dto\UserDto;
 use Mechemsi\StaticRules\Example\ValueObject\Email;
 use Mechemsi\StaticRules\Example\ValueObject\UserId;
 
+use function array_key_exists;
+use function array_map;
+use function array_values;
+use function count;
+
 /**
  * In-memory user repository implementation.
  *
