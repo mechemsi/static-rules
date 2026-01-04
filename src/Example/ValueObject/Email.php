@@ -66,7 +66,7 @@ final readonly class Email implements Stringable
     {
         $parts = explode('@', $this->value);
 
-        return $parts[0] ?? '';
+        return $parts[0];
     }
 
     public function equals(self $other): bool

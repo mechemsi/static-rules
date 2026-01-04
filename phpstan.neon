@@ -1,7 +1,7 @@
 parameters:
     level: max
-    checkGenericClassInNonGenericObjectType: false
-    checkExplicitMixed: false
+    paths:
+        - src
 
     excludePaths:
         - */vendor/*
