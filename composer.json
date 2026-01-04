@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Mechemsi\\StaticRules\\": "src/"
+            "Mechemsi\\StaticRules\\": "src/",
+            "Mechemsi\\StaticRules\\Scripts\\": "scripts/"
         }
     },
     "authors": [
@@ -17,15 +18,15 @@
     "require": {
         "php": ">=8.2",
         "phpmd/phpmd": "^2.15",
-        "phpstan/phpstan": "^1.12",
+        "phpstan/phpstan": "^2.0",
         "phpstan/extension-installer": "^1.4",
-        "phpstan/phpstan-deprecation-rules": "^1.2",
-        "phpstan/phpstan-doctrine": "^1.5",
-        "phpstan/phpstan-phpunit": "^1.4",
-        "phpstan/phpstan-strict-rules": "^1.6",
-        "phpstan/phpstan-symfony": "^1.4",
-        "squizlabs/php_codesniffer": "^3.10",
-        "doctrine/coding-standard": "^12.0",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-doctrine": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpstan/phpstan-symfony": "^2.0",
+        "squizlabs/php_codesniffer": "^3.0",
+        "doctrine/coding-standard": "^13.0",
         "slevomat/coding-standard": "^8.15",
         "mayflower/mo4-coding-standard": "^10.0",
         "nunomaduro/phpinsights": "^2.11",
@@ -47,6 +48,14 @@
             "@phpstan",
             "@phpmd",
             "@phpcs"
+        ],
+        "install-hooks": "Mechemsi\\StaticRules\\Scripts\\InstallHooks::install",
+        "uninstall-hooks": "Mechemsi\\StaticRules\\Scripts\\InstallHooks::uninstall",
+        "post-install-cmd": [
+            "@install-hooks"
+        ],
+        "post-update-cmd": [
+            "@install-hooks"
         ]
     }
 }

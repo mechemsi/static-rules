@@ -11,6 +11,7 @@ parameters:
         - */tests/_support/_generated/*
         - */*.html.php
         - */*.json.php
+        - */Scripts/*  # Composer scripts use Composer classes not in autoload
 
     ignoreErrors:
         # Add project-specific ignores here
