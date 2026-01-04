@@ -29,8 +29,6 @@ return [
         \NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class,
         \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class,
         \SlevomatCodingStandard\Sniffs\TypeHints\DisallowArrayTypeHintSyntaxSniff::class,
-        \SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class,
-        \SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class,
         \SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff::class,
         \NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class,
     ],

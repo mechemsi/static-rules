@@ -1,48 +1,17 @@
-includes:
-    #- rules.neon
 parameters:
     level: max
-    paths:
-        - rector.php
-        - phpinsights.php
-        - ecs.php
-        - .php-cs-fixer.dist.php
-    excludePaths:
-        - ../../*.html.php
-        - ../../*.json.php
-        - ../../src/Composer/ScriptHandler.php (?)
-        - ../../proto/*
-        - ../../tests/_data/*
-        - ../../tests/_output/*
-        #- ../../tests/Support/*.php
-        - ../../tests/Support/_generated/*
-        - ../../tests/bootstrap.php
-    doctrine:
-        #objectManagerLoader: ../../tests/ObjectManager.php
-        allowNullablePropertyForRequiredField: true
-        allCollectionsSelectable: true
-    symfony:
-        containerXmlPath: ../../var/cache/dev/App_KernelDevDebugContainer.xml
+    checkGenericClassInNonGenericObjectType: false
     checkExplicitMixed: false
-    checkMissingCallableSignature: true
-    #checkGenericClassInNonGenericObjectType: false
-    #includes:
-    #    - tools/02_phpstan/vendor/phpstan/phpstan/conf/bleedingEdge.neon
-    #    - tools/02_phpstan/vendor/phpstan/phpstan-phpunit/extension.neon
-    #    - tools/02_phpstan/vendor/phpstan/phpstan-symfony/extension.neon
+
+    excludePaths:
+        - */vendor/*
+        - */proto/*
+        - */tests/_data/*
+        - */tests/_output/*
+        - */tests/_support/_generated/*
+        - */*.html.php
+        - */*.json.php
+
     ignoreErrors:
-        # Ignore a Symfony issue for <Bundle>Extension classes
-        #- '#Parameter \#1 \$configTree of method Symfony\\Component\\Config\\Definition\\Processor(.)+#'
-        # Same issue as above but for Configuration classes in Bundles
-        #- '#(.)+should return Symfony\\Component\\Config\\Definition\\Builder\\TreeBuilder but returns(.)+#'
-        # Ignore composer usage of classes like: IOInterface, Event etc (they not a part of any project)
-        #- '#Composer(.)+#'
-        # Ignore Symfony expects or given (can be multiple args or mixed in annotations)
-        # Especially affects interfaces because they can be nonstrict and implementation can be different
-        #- '#(Symfony\w|\W.*(expects|given))#'
-        #- '#RetryableException is not subtype of Throwable#'
-        #- '#Construct empty\(\) is not allowed#'
-        #- message: '#Property [a-zA-Z0-9\\_]+::\$[a-zA-Z]+ is never written, only read.#'
-        #  path: src/Entity/*
-        #- message: '#Property [a-zA-Z0-9\\_]+::\$[a-zA-Z]+ type mapping mismatch: property can contain Doctrine\\Common\\Collections\\Collection but database expects Doctrine\\Common\\Collections\\Collection\&iterable\<[a-zA-Z0-9\\_]+\>.#'
-        #  path: src/Entity/*
+        # Add project-specific ignores here
+

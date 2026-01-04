@@ -1,7 +1,7 @@
 {
     "name": "mechemsi/static-rules",
-    "description": "Static rule package",
-    "type": "symfony-bundle",
+    "description": "Centralized static analysis configuration with PHPStan, PHPMD, PHPCS, and PHP Insights",
+    "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -15,37 +15,38 @@
         }
     ],
     "require": {
-        "doctrine/coding-standard": "^13.0",
-        "dq5studios/psalm-junit": "^4.0",
-        "friendsofphp/php-cs-fixer": "^3.64",
+        "php": ">=8.2",
+        "phpmd/phpmd": "^2.15",
+        "phpstan/phpstan": "^1.12",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-deprecation-rules": "^1.2",
+        "phpstan/phpstan-doctrine": "^1.5",
+        "phpstan/phpstan-phpunit": "^1.4",
+        "phpstan/phpstan-strict-rules": "^1.6",
+        "phpstan/phpstan-symfony": "^1.4",
+        "squizlabs/php_codesniffer": "^3.10",
+        "doctrine/coding-standard": "^12.0",
+        "slevomat/coding-standard": "^8.15",
         "mayflower/mo4-coding-standard": "^10.0",
         "nunomaduro/phpinsights": "^2.11",
-        "phan/phan": "^5.5",
-        "php-coveralls/php-coveralls": "^2.7",
-        "php-standard-library/psalm-plugin": "^2.3",
-        "phpmd/phpmd": "^2.15",
-        "phpmetrics/phpmetrics": "^2.8",
-        "phpstan/extension-installer": "^1.4",
-        "phpstan/phpstan": "^2.0",
-        "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-doctrine": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
-        "phpstan/phpstan-strict-rules": "^2.0",
-        "phpstan/phpstan-symfony": "^2.0",
-        "psalm/plugin-phpunit": "^0.19",
-        "psalm/plugin-symfony": "^5.2",
-        "rector/rector": "^2.0",
-        "roave/security-advisories": "dev-master",
-        "slevomat/coding-standard": "^8.0",
-        "squizlabs/php_codesniffer": "^3.10",
-        "symplify/easy-coding-standard": "^12.3",
-        "vimeo/psalm": "^6.0",
-        "weirdan/doctrine-psalm-plugin": "^2.9"
+        "roave/security-advisories": "dev-master"
     },
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true
-        }
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse",
+        "phpmd": "phpmd src,tests text phpmd.xml",
+        "phpcs": "phpcs",
+        "insights": "phpinsights",
+        "analyse": [
+            "@phpstan",
+            "@phpmd",
+            "@phpcs"
+        ]
     }
 }
