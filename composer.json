@@ -50,12 +50,6 @@
             "@phpcs"
         ],
         "install-hooks": "Mechemsi\\StaticRules\\Scripts\\InstallHooks::install",
-        "uninstall-hooks": "Mechemsi\\StaticRules\\Scripts\\InstallHooks::uninstall",
-        "post-install-cmd": [
-            "@install-hooks"
-        ],
-        "post-update-cmd": [
-            "@install-hooks"
-        ]
+        "uninstall-hooks": "Mechemsi\\StaticRules\\Scripts\\InstallHooks::uninstall"
     }
 }
