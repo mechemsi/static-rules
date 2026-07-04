@@ -61,7 +61,6 @@ The package follows PSR-4 autoloading with namespace `Mechemsi\StaticRules\` map
 ### Direct Tool Commands (for reference)
 - `vendor/bin/phpstan analyse -c phpstan.neon` - Advanced analysis (level max)
 - `vendor/bin/psalm` - Psalm static analysis
-- `vendor/bin/phan` - Phan static analysis
 - `vendor/bin/phpcs --standard=phpcs.xml` - Extended standards check
 - `vendor/bin/phpcbf` - Auto-fix coding standard violations
 - `vendor/bin/ecs check` - ECS code style check

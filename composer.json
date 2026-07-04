@@ -20,7 +20,6 @@
         "friendsofphp/php-cs-fixer": "^3.64",
         "mayflower/mo4-coding-standard": "^10.0",
         "nunomaduro/phpinsights": "^2.11",
-        "phan/phan": "^5.5",
         "php-coveralls/php-coveralls": "^2.7",
         "php-standard-library/psalm-plugin": "^2.3",
         "phpmd/phpmd": "^2.15",
