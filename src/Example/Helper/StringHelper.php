@@ -68,7 +68,7 @@ final class StringHelper
 
     public static function isBlank(?string $text): bool
     {
-        return null === $text || '' === trim($text);
+        return null === $text || '' === trim($text, " \n\r\t\v\0");
     }
 
     public static function isNotBlank(?string $text): bool
