@@ -1,4 +1,4 @@
-FROM php:8.5-cli@sha256:50956f094e90a716d43bea28087d447555ad80510e386ab8c9c10d8c70d781a9
+FROM php:8.6-cli@sha256:d84acf3155d907afaa5afa9b9457c5f12016b6dc7ade84659f40cdc505cc087d
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -6,12 +6,13 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     curl \
+    libonig-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install PHP extensions that might be needed for static analysis tools
+# PHP 8.6's CLI image no longer bundles mbstring.
 RUN docker-php-ext-install \
-    pcntl \
-    && docker-php-ext-enable pcntl
+    mbstring \
+    pcntl
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

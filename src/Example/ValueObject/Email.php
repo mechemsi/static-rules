@@ -39,7 +39,7 @@ final readonly class Email implements Stringable
 
     public static function fromString(string $email): self
     {
-        $normalized = strtolower(trim($email));
+        $normalized = strtolower(trim($email, " \n\r\t\v\0"));
 
         if (false === filter_var($normalized, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidArgumentException(
